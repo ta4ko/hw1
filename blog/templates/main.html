@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+ <ul>
+    {% for key, value in heroes.items %}
+    <li><a href="{{value}}">{{ key }}</a></li>
+    {% endfor %}
+ </ul>
+{% endblock %}

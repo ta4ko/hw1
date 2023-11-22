@@ -1,0 +1,44 @@
+.baseContainer {
+    height: 100vh;
+    display: grid;
+    grid-template-areas:
+        'header header'
+        'sidebar content';
+    gap: 10px;
+    grid-template-columns: 150px 1fr;
+    grid-template-rows: 90px 1fr;
+}
+
+
+.baseItem {
+    border: 1px solid black;
+}
+
+
+.baseHeader {
+    grid-area: header;
+    padding: 5px 5px 5px 20px;
+}
+
+
+.baseSidebar {
+    display: flex;
+    grid-area: sidebar;
+}
+
+
+.baseSidebar ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.baseContent {
+    grid-area: content;
+}
+
+.photo {
+    height: 300px;
+    width: 300px;
+}

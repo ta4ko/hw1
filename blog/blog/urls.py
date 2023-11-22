@@ -16,8 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .view import hello_page
+from .view import main_page, about_page, castiel_page, dean_page, sam_page
 
 urlpatterns = [
-    path('', hello_page),
+    path('', main_page),
+    path('about/', about_page),
+    path('castiel/', castiel_page),
+    path('dean/', dean_page),
+    path('sam/', sam_page),
 ]

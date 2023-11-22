@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <link href="{% static 'css/base.css' %}" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="baseContainer">
+      <div class="baseHeader baseItem"><h1>Блог Сверхъестественное</h1></div>
+      <div class="baseSidebar baseItem">
+        <ul>
+          {% for key, value in menu.items %}
+          <li><a href="{{value}}">{{ key }}</a></li>
+          {% endfor%}
+        </ul>
+      </div>
+      <div class="baseContent baseItem">{% block content %} {% endblock %}</div>
+    </div>
+  </body>
+</html>
+
+
+
