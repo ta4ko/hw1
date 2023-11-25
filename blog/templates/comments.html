@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div>
+  <h2>Комментарии</h2>
+  <form
+    autocomplete="off"
+    action="{% url 'comment' %}"
+    method="post"
+    class="commentForm"
+  >
+    {% csrf_token %}
+    <label for="fullName">ФИО</label>
+    <input name="fullName" type="text" />
+    <label for="email">Email</label>
+    <input name="email" type="text" />
+    <label for="text">Текст комментария</label>
+    <textarea name="text" type="text"></textarea>
+
+    <button type="submit">Отправить</button>
+  </form>
+  <div class="commentList">
+    {% for comment in comments %}
+    <div class="row">
+      <div>Имя: {{ comment.fullName }}</div>
+      <div>Комментарий: {{ comment.text }}</div>
+    </div>
+    {% endfor%}
+  </div>
+</div>
+{% endblock %}
